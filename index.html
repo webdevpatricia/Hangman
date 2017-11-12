@@ -4,63 +4,56 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 
 	<title>Christmas Hangman</title>
 </head>
 <body>
-<div id=bg align="center">
-<div class="pageheader">
-  <h1>Christmas Hangman
-  	<small>The Grinch Edition</small>
-  </h1>
-
-</div>
-<h2><strong>Press any key to begin</strong></h2>
+	<div id=bg align="center">
+	<div class="pageheader">
+	  <h1>Christmas Hangman
+	  	<small>The Grinch Edition</small>
+	  </h1>
+	</div>
+	<h2><strong>Press any key to begin</strong></h2>
 
 <div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-3 col-sm-3 col-md-3" id="col-1">
-				<p><strong>Wins:</strong></p>
-				<p><strong>Guesses Remaining:</strong></p>
+				<p id="wins"><strong>Wins:</strong></p>
+				<p id ="remGuess"><strong>Guesses Remaining:</strong></p>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-6" id="col-2">
-				<canvas id="gallows">
-					<script src="assets/javascript/hangman.js"></script>
-				</canvas>
-				<!-- <div id="gallows"></div> -->
-				<div id="grinch">
-					<!-- <div id ="garland">
-						<img  src="assets/images/garland.png">
-					</div> -->
-					<div id="hat">
-						<img src="assets/images/grinch-hat.png"><br>
+				<div id="parent-container">
+					<canvas id="gallows"></canvas>
+					<div id="grinch">
+						<img id = "hat" src="assets/images/grinch-hat.png">
+						<img id="head" src="assets/images/grinch-head.png">
+						<img id="ubody" src="assets/images/grinch-upper-body.png">
+						<img id="lbody" src="assets/images/grinch-lower-body.png">
+						<img id="larm" src="assets/images/grinch-left-arm.png">
+						<img id="rarm" src="assets/images/grinch-right-arm.png">
+						<img id="lhand" src="assets/images/grinch-left-hand.png">
+						<img id="rhand" src="assets/images/grinch-right-hand.png">
+						<img id="lleg" src="assets/images/grinch-left-leg.png">
+						<img id="rleg" src="assets/images/grinch-right-leg.png">
+						<img id="lfoot" src="assets/images/grinch-left-foot.png">
+						<img id="rfoot" src="assets/images/grinch-right-foot.png">
 					</div>
-					<div id="head">
-						<img src="assets/images/grinch-head.png">
+					<div id="word">
+						<p id="guess"></p>
 					</div>
-					<div id="ubody">
-						<img src="assets/images/grinch-upper-body.png">
-					</div>
-					<div id="lbody">
-						<img src="assets/images/grinch-lower-body.png">
-					</div>
-					<img id="larm" src="assets/images/grinch-left-arm.png">
-					<img id="rarm" src="assets/images/grinch-right-arm.png">
-					<img id="lhand" src="assets/images/grinch-left-hand.png">
-					<img id="rhand" src="assets/images/grinch-right-hand.png">
-					<img id="lleg" src="assets/images/grinch-left-leg.png">
-					<img id="rleg" src="assets/images/grinch-right-leg.png">
-					<img id="lfoot" src="assets/images/grinch-left-foot.png">
-					<img id="rfoot" src="assets/images/grinch-right-foot.png">
 				</div>
-				<div id="currentWord" onkeyup="getWord()"></div>
 			</div>
 			<div class="col-xs-3 col-sm-3 col-md-3" id="col-3">
 				<div class="box">
 					<h2>Guessed Letters</h2>
+					<div id="guessedLetters"></div>
 				</div>
 			</div>
 		</div>	
 	</div>
 </body>
+	<script src="assets/javascript/hangman.js"></script>
 </html>

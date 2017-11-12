@@ -38,11 +38,9 @@ function drawGallows(mx,my,lx,ly) {
 	myContext.strokeStyle = "maroon";
 	myContext.stroke();
 
-//press any key
+
 
 //array of chistmas words
-var myWord = document.getElementById("currentWord");
-var myWordContext = myWord.getContext("2d");
 
 var christmasWords = ["Advent","angels","announcement","bells","Bethlehem","Blitzen","candles","candy",
 "candy canes","cards","cedar","celebrate","ceremonies","chimney","Christmas cookies","Christmas tree","cold",
@@ -51,19 +49,126 @@ var christmasWords = ["Advent","angels","announcement","bells","Bethlehem","Blit
 "holiday","holly","holy","icicles","jolly","lights","lists","merry","miracle","mistletoe","New Year","Noel","North Pole",
 "pageant","parades","party","pie","pine","plum pudding","poinsettia","Prancer","presents","pumpkin pie","punch",
 "red/green","reindeer","ribbon","Rudolph","sacred","sales","sauce","Scrooge","season","sled","sleigh bells","snowflakes",
-"spirit","St. Nick","stand"]
+"spirit","St. Nick","stand"];
 
+var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+
+
+// get a new word
 var randomWord = christmasWords[Math.floor(Math.random()*christmasWords.length)];
+console.log(randomWord);
 
+
+// display underscores for each letter in the word
+	var word = ""
+	for (var i = 0; i < randomWord.length; i++) {
+	word = word + "_ "
+    document.getElementById("word").innerHTML = word;
+	};
+
+document.onkeyup = function(event){
+var lettersGuessed = event.key;
+// console.log(lettersGuessed);
 for (var i = 0; i < randomWord.length; i++) {
-	var newWord = ""
-	document.getElementById("currentWord")
-    document.currentWord.innerHTML = newWord(randomWord.charAt(i));
-	}
+  if (lettersGuessed === randomWord[i]) {
+   var index = lettersGuessed.indexOf(i);
+   wordArray = word.split();
+   wordArray[i].pop;
+   wordArray.append()
 
+
+  }
+}
+//document.getElementById("guess").innerHTML= event.key;
+}
+
+// 	guesses = [];
+
+// function checkWord(){
+// 	document.getElementById("word").innerHTML("you did it!");
+// }
+
+
+
+//create guesses list
+// var guesses = function () {
+//     myGuess = document.getElementById('guesses');
+//     letters = document.createElement('ul');
+
+//     for (var i = 0; i < alphabet.length; i++) {
+//       letters.id = 'alphabet';
+//       list = document.createElement('li');
+//       list.id = 'letter';
+//       list.innerHTML = alphabet[i];
+//       console.log(list.innerHTML);
+//       // check();
+//       // myButtons.appendChild(letters);
+//       // letters.appendChild(list);
+//     }
+//   }
+
+  // onKeyUp Function
+  //  check = function () {
+  //   list.onKeyUp = function () {
+  //     var guess = (this.innerHTML);
+  //     this.setAttribute("class", "active");
+  //     this.onKeyUp = null;
+  //     for (var i = 0; i < newWord.length; i++) {
+  //       if (newWord[i] === guess) {
+  //         guesses[i].innerHTML = guess;
+  //         counter += 1;
+  //       } 
+  //     }
+  //     var j = (word.indexOf(guess));
+  //     if (j === -1) {
+  //       guessesLeft -= 1;
+  //       showGuessesLeft.innerHTML=" " + guessesLeft;
+  //       if(guessesLeft <1) {
+  //       	showGuesses.innerHTML = "Game Over";
+  //       }
+  //       animate();
+  //     } else {
+  //       comments();
+  //     }
+  //   }
+  // }
+
+// var correctLetters  = [];
+// while(currentWord.indexOf(i.letters) != 1){
+// 	i = currentWord.indexOf(i.letters) + 1;
+// 	document.getElementById("currentWord").innerHTML = i;
+// }
+// console.log(i);
+
+//guessed letters display
+  //  result = function () {
+  //   wordHolder = document.getElementById('hold');
+  //   correct = document.createElement('ul');
+
+  //   for (var i = 0; i < word.length; i++) {
+  //     correct.setAttribute('id', 'my-word');
+  //     guess = document.createElement('li');
+  //     guess.setAttribute('class', 'guess');
+  //     if (word[i] === "-") {
+  //       guess.innerHTML = "-";
+  //       space = 1;
+  //     } else {
+  //       guess.innerHTML = "_";
+  //     }
+
+  //     geusses.push(guess);
+  //     wordHolder.appendChild(correct);
+  //     correct.appendChild(guess);
+  //   }
+  // }
 //reset function
 
 //calculate wins
+// function calcWins(){
+// 	var numWins = 0;
+// 	numWins = numWins + 1;
+// };
 
 //starting word display
 
@@ -71,8 +176,10 @@ for (var i = 0; i < randomWord.length; i++) {
 //reveal letters display
 
 //number of guesses remining
-
-//guessed letters display
+// function calcRemGuesses(){
+// 	var numGuesses = 12;
+// 	numGuesses = numGuesses + 1;
+// };
 
 
 	
